@@ -20,11 +20,11 @@ describe("skladiště - sága", () => {
    *  - otestujeme dílčí efekty nad expect ságou
    *  - nakonec zavoláme .silentRun() abychom se vyhli warningů ohledně nekonečného cyklu
    */
-  it("po spuštění zavolá ságy pro inicializaci skladiště a produkci surovin", () => expectSaga(saga)
-      .provide(rootSagaProviders)
-      // TODO
-      .silentRun()
-  );
+  // it("po spuštění zavolá ságy pro inicializaci skladiště a produkci surovin", () => expectSaga(saga)
+  //     .provide(rootSagaProviders)
+  //     // TODO
+  //     .silentRun()
+  // );
 
   /**
    * 4. otestujeme ságy

@@ -2,10 +2,10 @@ import { Saga } from "redux-saga";
 import { Reducer } from "redux";
 import { ComponentType } from "react";
 
-import { Ii18nState } from "i18n/types";
-import { IStorageState } from "storage/types";
-import { IWorkersState } from "workers/types";
-import {IConfigState} from 'config/types';
+import { Ii18nState } from "./i18n/types";
+import { IStorageState } from "./storage/types";
+import { IWorkersState } from "./workers/types";
+import {IConfigState} from './config/types';
 export enum Locale {
   EN = "en",
   CZ = "cs"

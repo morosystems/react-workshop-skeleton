@@ -1,4 +1,5 @@
 import { Action } from "redux";
+import {SET_WORKER_CAPACITY} from "./constants";
 
 /**
  * Úkol 3
@@ -31,7 +32,7 @@ export interface IRemoveFoodAction extends Action<string> {
 }
 
 export interface ISetWorkerCapacityAction
-  extends Action<string> {
+  extends Action<typeof SET_WORKER_CAPACITY> {
   readonly payload: {
     readonly workerCapacity: number;
   };
