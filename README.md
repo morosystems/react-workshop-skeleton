@@ -50,9 +50,9 @@ cílem je doplnit existující React web aplikaci/hru za využití reduxu a ság
         * je aktivní pouze pokud má dostatek dřeva
 * přehled nezařazených pracovníků
 * přehled pracovníků pracujících na pile
-* tlačítko na přiřazení nezačazeného pracovníka na pilu
+* tlačítko na přiřazení nezařazeného pracovníka na pilu
 * přehled pracovníků pracujících na poli
-* tlačítko na přiřazení nezačazeného pracovníka na pole
+* tlačítko na přiřazení nezařazeného pracovníka na pole
 # Zadání workshopových úkolů
 _pozn. mechanismy aplikace mimo zadání budu již připravené._
 
