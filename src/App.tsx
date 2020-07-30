@@ -13,6 +13,6 @@ import menu from "./menu";
 export default () => (
   <MainContainer>
     <menu.Container storage={null} /> {/* TODO insert storage container instead of null */}
-      {/* TODO insert storage container */}
+      {/* TODO insert workers container */}
   </MainContainer>
 );
