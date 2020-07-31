@@ -2,9 +2,6 @@ import React, { FunctionComponent } from "react";
 import { connect, MapStateToProps } from "react-redux";
 import { ResourceItem, GridLayout } from "components";
 import {ResourceType, NoneOwnProps, IState} from "types";
-import { workers } from "workers";
-
-import { getWoodAmount, getFoodAmount, getWorkerCapacity } from "./selectors";
 
 type StorageComponentProps = {
   woodAmount: number;
@@ -39,11 +36,12 @@ type StateProps = Pick<
   "woodAmount" | "foodAmount" | "workerCount" | "workerCapacity"
 >;
 
+// TODO replace 0 for selectors
 const mapStateToProps: MapStateToProps<StateProps, NoneOwnProps, IState> = state => ({
-    woodAmount: getWoodAmount(state),
-    foodAmount: getFoodAmount(state),
-    workerCount: workers.getWorkerCount(state),
-    workerCapacity: getWorkerCapacity(state)
+    woodAmount: 0,
+    foodAmount: 0,
+    workerCount: 0,
+    workerCapacity: 0
 });
 
 export const StorageContainer = connect(mapStateToProps)(StorageComponent);
