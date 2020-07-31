@@ -11,4 +11,9 @@ export const storage = {
     //TODO replace mocks with real selectors and action creators
     getWoodAmount: (state:any) => Number.NaN,
     actionBuildHouseCreator: (a:any, b:any): Action<any> => ({type: ""}),
+    actionRemoveFoodCreator: (a:any): Action<any> => ({type: ""}),
+    hasStorageAnyFood: (state:any) => Number.NaN,
+    getWorkerCapacity: (state:any) => Number.NaN,
+    actionAddFoodCreator: (a:any): Action<any> => ({type: ""}),
+    actionAddWoodCreator: (a:any): Action<any> => ({type: ""}),
 };
