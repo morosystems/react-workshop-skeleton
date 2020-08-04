@@ -1,7 +1,7 @@
 import { combineReducers, Reducer } from "redux";
 import { IGameRules } from "types";
-import { GameRules, IConfigState } from "./types";
-import { TOGGLE_DARK_THEME } from "./constants";
+import { IConfigState } from "./types";
+import { GameRules, TOGGLE_DARK_THEME } from "./constants";
 
 const isDarkTheme: Reducer<boolean> = (state = true, action) => {
   if (action.type === TOGGLE_DARK_THEME) {

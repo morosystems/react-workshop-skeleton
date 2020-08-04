@@ -12,7 +12,7 @@ import { Saga, SagaIterator } from "redux-saga";
 import { config } from "config";
 import { storage } from "storage";
 import workersJSON from "workersData";
-import { IGameRules} from "types";
+import { IGameRules } from "types";
 import { IWorker, Gender, WorkOccupation } from "./types";
 import { ADD_WORKERS, WORKERS_HAS_ARRIVED } from "./constants";
 import { IAddWorkersAction } from "./types";

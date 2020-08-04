@@ -114,6 +114,9 @@ definování rozhraní modulu, zapojení konterjneru modulu, napojení kontejner
     * použití připravených komponent
         * WorkerListHeader - zobrazuje lokalizovaný nadpis, použijeme selektor i18n.getMessage(state, "unemployed")
         * WorkerList - zobrazuje jména nezměstnaných pracovníků, ty získáme ze stavu pomocí selektoru z definovaného v src/workers/selecectors.ts
+    * data pro komponenty je potřeba získat z reduxu napojením komponenty
+         * použijeme HOC connect z balíku react-redux
+         * vytovoříme funkci mapStateToProps, která má první parametr stav aplikace (typu IState) výsledkem budou propsy naplněné daty ze selektorů
 ## Úkol 3 - vytvoření modulu skladiště
 ### Cíl úkolu
 vytvoření modulu skladiště 
@@ -126,11 +129,19 @@ vytvoření modulu, akcí, reduceru, selectoru
     * vytvoření interface pro sklad IStorage bude obsahovat množství dřeva a jídla
     * vytvoření interface IStorageState stav našeho modulu, bude obsahovat typování skladu a kapacity provníků
 2. v souboru  src/resources/reducer.ts doplnění defaultních hodnot pro reducery storage a workerCapacity
+    * v našem případě mohou být defaultní hodnoty např `0` nebo `null`. Při inicializaci aplikace se pravidla uloží do stavu a sagy nasetují defaultní hodnoty na příslušná místa.
+    * reducer storage bude obsahovat jídlo a dřevo (složený stav typu IWarehouse)
+    * reducer workerCapacity bude obashovat atomickou hodnotu reperzentující celkovou kapacitu pracovníků.
 3. vytvoření selektorů getWoodAmount, getFoodAmount, getWorkerCapacity v src/storage/selectors.ts
 4. zapojení getWoodAmount, getFoodAmount, getWorkerCapacity  v src/storage/Container.tsx 
 5. vytvoření akcí WOOD_PRODUCED, FOOD_PRODUCED, REMOVE_FOOD, BUILD_HOUSE v src/storage/constants.ts (Pozn. akci REMOVE_WOOD není třeba implementovat je zahrnuta do akce BUILD_HOUSE)
-6. vytvoření action creatorů actionWoodProducedCreator(amount), actionFoodProducedCreator(amount), actionBuildHouseCreator(capacity, cost) v src/stroage/actions.ts
+6. vytvoření action creatorů v src/stroage/actions.ts
+    * actionWoodProducedCreator(amount:Number)
+    * actionFoodProducedCreator(amount:Number)
+    * actionRemoveFoodCreator(amount:Number)
+    * actionBuildHouseCreator(capacity:Number, cost:Number)
 7. aplikování akcí v src/storage/reducer.ts
+    * reducer workerCapacity bude reagovat na akci BUILD_HOUSE, kdy dojde k jeho navýšení. akci 
 8. exportujeme NAME (název modulu uložený v konstantách), ságu, reducer a Container /src/storage/index.ts
 9. zapojení modulu storage
     * do src/App je potřeba zapojit kontejner exportovaný storage modulem
