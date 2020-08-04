@@ -15,6 +15,7 @@ describe("DecreasingSecondCounter", () => {
      * 4. vygenerujeme/updatujee snapshoty pomocí příkazové řádky npm run test:update-snapshots
      */
     describe("Snapshot", () => {
+        // TODO remove ignore and use variable
         // @ts-ignore
         const sharedProps: Pick<DecreasingSecondCounterProps, "onCounterReset" | "msg"> = {
             onCounterReset: () => {},
@@ -47,6 +48,7 @@ describe("DecreasingSecondCounter", () => {
         // po namountování by nemělo dojít k provolání callbacku ozkoušíme pomocí not.toBeCalled()
 
         // počet cyklů setTimout o které se chceme posunout
+        // TODO remove ignore and use variable
         // @ts-ignore
         const numberOfCycles = 2;
 

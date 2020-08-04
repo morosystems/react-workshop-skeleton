@@ -37,6 +37,7 @@ describe("skladiště - sága", () => {
    *  - ujistíme se že sága doběhla pomocí .isDone()
    */
   describe("sága pro inicializaci skladiště", () => {
+    // TODO remove ignore and use variable
     // @ts-ignore
     const gameConfigMock = {startingWorkerCapacity: 100};
     it("načte ze store konfiguraci hry a dispatchne akci pro nastavení kapacity pracovníků", () => {
@@ -54,9 +55,11 @@ describe("skladiště - sága", () => {
    *  - pokud je sága v nekončeném cyklu, testujeme jeden cyklus a ukončíme ji pomocí .finish()
    */
   describe("sága pro produkci jídla na poli", () => {
+    // TODO remove ignore and use variable
     // @ts-ignore
     const gameConfigMock = {fieldProductionSeconds: 1, fieldProductionPerWorkerRatio: 5};
     it("Pokud jsou na poli pracovníci, tak po dané prodlevě dipatchuje akci pro přidání jídla do skladiště", () => {
+      // TODO remove ignore and use variable
       // @ts-ignore
       const singleFiledWorkerMock: Array<IWorker> = [{
         id: "0x0",
@@ -71,6 +74,7 @@ describe("skladiště - sága", () => {
     });
 
     it("Pokud není dostatek pracovníků, akce pro přidání jídla do skladiště není dispatchnuta", () => {
+      // TODO remove ignore and use variable
       // @ts-ignore
       const noFiledWorkersMock: Array<IWorker> = [];
       // TODO testSaga
@@ -91,6 +95,7 @@ describe("skladiště - sága", () => {
       // @ts-ignore
     const gameConfigMock = {sawProductionSeconds: 1, sawProductionPerWorkerRatio: 5};
       it("Pokud jsou na pile pracovníci, tak po dané prodlevě dipatchuje akci pro přidání dřeva do skladiště", () => {
+        // TODO remove ignore and use variable
         // @ts-ignore
         const singleSawWorkerMock: Array<IWorker> = [{
           id: "0x0",
@@ -105,6 +110,7 @@ describe("skladiště - sága", () => {
       });
 
       it("Pokud není dostatek pracovníků, akce pro přidání jídla do skladiště není dispatchnuta", () => {
+        // TODO remove ignore and use variable
         // @ts-ignore
         const noFiledWorkersMock: Array<IWorker> = [];
         // TODO testSaga
