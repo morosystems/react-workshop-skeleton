@@ -12,6 +12,7 @@
 * update Jest snapshotů
 `yarn run test:update-snapshots`
 
+* aplikace používá hotload, takže refreshne aplikaci po uložení změny ve zdrojovém souboru. Tz. není ji potřeba resetartovat
 
 # Popis aplikace
 cílem je doplnit existující React web aplikaci/hru za využití reduxu a ság, tak aby reflektovala zadání.
@@ -53,6 +54,10 @@ cílem je doplnit existující React web aplikaci/hru za využití reduxu a ság
 * tlačítko na přiřazení nezařazeného pracovníka na pilu
 * přehled pracovníků pracujících na poli
 * tlačítko na přiřazení nezařazeného pracovníka na pole
+
+# Kostra aplikace 
+[aplikace](https://i.imgur.com/9O3f9vf.png)
+
 # Zadání workshopových úkolů
 _pozn. mechanismy aplikace mimo zadání budu již připravené._
 
@@ -158,10 +163,11 @@ tvorba ságy, efekty, tvorba util funkce, testy na ságu a util funkci
 1. v src/storage/saga doplníme ságy pro genrerování surovin
 2. ságy pro dřevo/jídlo budou mít stejné chování, jen počítat s jinými hodnotami
 3. v nekonečném cyklu budem opakovat
-    * načtení aktuální konfigurace z config.getGameConfig
+    * načtení aktuální konfigurace ze selektoru config.getGameRules
     * pomocí effektu delay počkáme daný počet milisekund (je potřeba převést hodnotu z konfigurace z sekund na ms)
-    * ze stavu vybereme aktuální pracovníků na dané pozici
+    * ze stavu vyberem pracovníky na dané pozici z modulu workers pomocí selektoru workers.getSawWorkers/workers.getFieldWorkers
     * pokud jsou na dané pozici někteří pracovníci přidáme tolik suroviny kolik je pracovníků
+        * počet surovin je roven počtu pracovníků na dané pozici pronásobený ratem z pravidel (sawProductionPerWorkerRatio/fieldProductionPerWorkerRatio)
 4. napíšeme testy na obě ságy
     * integrační test
         * pomocí expectSaga provedeme integrační test hlavní ságy

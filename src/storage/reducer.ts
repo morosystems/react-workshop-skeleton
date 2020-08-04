@@ -1,5 +1,5 @@
 import { combineReducers, Reducer } from "redux";
-import { IStorageState, IStorage } from "./types";
+import { IStorageState, IWarehouse } from "./types";
 import {SET_WORKER_CAPACITY} from "./constants";
 
 /**
@@ -7,7 +7,7 @@ import {SET_WORKER_CAPACITY} from "./constants";
  * 2. v souboru  src/resources/reducer.ts doplnění defaultních hodnot pro reducery storage a workerCapacity (smažeme null z typu reduceru)
  * 7. aplikování akcí v src/resources/reducer.ts (pozor na mutace!)
  */
-const storage: Reducer<IStorage | null> = (
+const warehouse: Reducer<IWarehouse | null> = (
   state = null,
   action
 ) => {
@@ -29,6 +29,6 @@ const workerCapacity: Reducer<number | null> = (state = null, action) => {
 
 // @ts-ignore TODO delete
 export const reducer: Reducer<IStorageState> = combineReducers({
-  storage,
+  warehouse,
   workerCapacity
 });

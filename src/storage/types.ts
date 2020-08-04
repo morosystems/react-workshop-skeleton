@@ -4,10 +4,10 @@ import {SET_WORKER_CAPACITY} from "./constants";
 /**
  * Úkol 3
  * 1.v souboru src/storage/types.ts
- *  - vytvoření interface pro sklad IStorage  bude obsahovat množství dřeva a jídla
- *  - JNemvytvoření interface IStorageState  stav našeho modulu, bude obsahovat typování skladu a kapacity provníků
+ *  - vytvoření interface pro sklad IWarehouse bude obsahovat množství dřeva a jídla
+ *  - vytvoření interface IStorageState stav našeho modulu, bude obsahovat typování skladu a kapacity provníků
  */
-export interface IStorage {
+export interface IWarehouse {
 }
 
 export interface IStorageState {

@@ -75,6 +75,12 @@ export const workerEatingLoopSaga: Saga = function* workerEatingLoopSaga(
     if (worker === undefined) {
       throw new Error("workerEatingLoopSaga, worker is undefined");
     }
+
+    // end this saga if worker has died, to avoid zombie workers eating out the food supply
+    if (worker.hasPassed) {
+        return;
+    }
+
     const hasFood: ReturnType<typeof storage.hasStorageAnyFood> = yield select(
       storage.hasStorageAnyFood
     );
