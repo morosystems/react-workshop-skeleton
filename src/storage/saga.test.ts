@@ -1,13 +1,18 @@
-import {expectSaga} from "redux-saga-test-plan";
+import { fork } from "redux-saga/effects";
 import {EffectProviders, StaticProvider} from "redux-saga-test-plan/providers";
 
-import {saga} from './saga';
 import {workers} from "../workers";
+import {fieldProductionSaga, initStorageSaga, sawProductionSaga} from "./saga";
 
 interface IWorker {}
 
 describe("skladiště - sága", () => {
+  //TODO remove ts-ignore after use of variable
+  //@ts-ignore
   const rootSagaProviders: EffectProviders | StaticProvider[] = [
+    [fork(initStorageSaga), null],
+    [fork(fieldProductionSaga), null],
+    [fork(sawProductionSaga), null],
   ];
 
   /**
