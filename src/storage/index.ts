@@ -1,4 +1,6 @@
 import {Action} from 'redux';
+import {saga} from "./saga";
+
 /**
  * Úkol 3
  * 8. exportujeme NAME (název modulu uložený v konstantách), ságu, reducer a Container /src/storage/index.ts
@@ -8,6 +10,7 @@ import {Action} from 'redux';
  *  - v src/saga je potřeba spustit ságu exportovanou workers modulem
  */
 export const storage = {
+    saga,
     //TODO replace mocks with real selectors and action creators
     getWoodAmount: (state:any) => Number.NaN,
     actionBuildHouseCreator: (a:any, b:any): Action<any> => ({type: ""}),

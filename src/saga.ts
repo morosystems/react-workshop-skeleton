@@ -2,6 +2,8 @@ import { fork, all } from "redux-saga/effects";
 import { Saga } from "redux-saga";
 import { i18n } from "./i18n";
 import { config } from "./config";
+import { workers } from "./workers";
+import { storage } from "./storage";
 
 /**
  * Ukol 2
@@ -20,7 +22,7 @@ export const saga: Saga = function* saga() {
 
   //business module sagas
   yield all([
-    // TODO fork(workers.saga),
-    // TODO fork(storage.saga),
+    fork(workers.saga),
+    fork(storage.saga),
   ]);
 };

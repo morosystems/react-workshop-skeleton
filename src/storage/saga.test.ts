@@ -19,9 +19,9 @@ describe("skladiště - sága", () => {
    * 4. otestujeme ságy
    * integrační test
    *  - pomocí expectSaga provedeme integrační test hlavní ságy
-   *  - definujeme providery v rootSagaProviders
-   *  - provider je pole, kde první prvek pole je daný efekt a druhý jsou jeho parametry (pokud nepředáváme parametry nastavíme druhý prvek na null)
-   *  - nastavíme providery expect ságy pomocí .provide(rootSagaProviders)
+   *  - jsou definovany providery v rootSagaProviders
+   *      - provider je pole, kde první prvek pole je daný efekt a druhý jsou jeho parametry (pokud nepředáváme parametry nastavíme druhý prvek na null)
+   *      - nastavíme providery expect ságy pomocí .provide(rootSagaProviders)
    *  - otestujeme dílčí efekty nad expect ságou
    *  - nakonec zavoláme .silentRun() abychom se vyhli warningů ohledně nekonečného cyklu
    */
@@ -36,7 +36,7 @@ describe("skladiště - sága", () => {
    * jednotkový test
    *  - pomocí testSaga provedeme jednotkový test initStorageSaga
    *  - na začátku testu je třeba napsat .next()
-   *  - otestujeme dané efekty, select, put, delay..
+   *  - otestujeme dané efekty, select, put, delay.. ve stejném pořadí jak jsou volány v sáze
    *  - každý další efekt krokujeme pomocí next
    *  - pokud potřebujem předat výsledek do proměnné předáme jako parametr následujícího .next()
    *  - ujistíme se že sága doběhla pomocí .isDone()
@@ -54,7 +54,7 @@ describe("skladiště - sága", () => {
    * 4. otestujeme ságy
    *  - pomocí testSaga provedeme jednotkový test initStorageSaga
    *  - na začátku testu je třeba napsat .next()
-   *  - otestujeme dané efekty, select, put, delay..
+   *  - otestujeme dané efekty, select, put, delay.. ve stejném pořadí jak jsou volány v sáze
    *  - každý další efekt krokujeme pomocí next
    *  - pokud potřebujem předat výsledek do proměnné předáme jako parametr následujícího .next()
    *  - pokud je sága v nekončeném cyklu, testujeme jeden cyklus a ukončíme ji pomocí .finish()
