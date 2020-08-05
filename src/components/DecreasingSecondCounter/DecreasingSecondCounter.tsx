@@ -1,4 +1,7 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useState, useEffect } from "react";
+import {bemClassNames} from "bemClassNames";
+
+const cn = bemClassNames('DecreasingSecondCounter');
 
 export type DecreasingSecondCounterProps = {
   msg: string;
@@ -20,6 +23,7 @@ export type DecreasingSecondCounterProps = {
  *    - pro nastavení timeoutu na v vteřinu je vhodné použít funkce setTimeout nebo setInterval
  * 4. přidáme styly komponenty
  *  - pro tvorbu classname použijeme util funkci /src/bemClassNames rozšiřující https://www.npmjs.com/package/@bem-react/classname
+ *  - classu komponenty chceme vygenerovat při inicializaci aplikace, parametriozvat ji pak při každé změně
  *  - do souboru /src/components/DecreasingSecondCounter.css přidáme
  *      - styl pro základní classname (použité pro light theme) - barva textu je #696969
  *      - styl pro classname s parametrem dark theme - barva textu je #cacaca
@@ -28,4 +32,18 @@ export type DecreasingSecondCounterProps = {
 
 export const DecreasingSecondCounter: FunctionComponent<
   DecreasingSecondCounterProps
-> = () => <span />;
+    > = ({msg, startValue, onCounterReset, isDarkTheme}) => {
+  const [counter,setCounter] = useState(startValue);
+
+  useEffect(() => {
+    if(counter > 0) {
+      setTimeout(() => {
+        setCounter(counter - 1)
+      }, 1000)
+    } else {
+      setCounter(startValue);
+      onCounterReset();
+    }
+  }, [counter, setCounter, startValue, onCounterReset])
+  return <span className={cn({isDarkTheme})}>{counter} {msg}</span>
+};
