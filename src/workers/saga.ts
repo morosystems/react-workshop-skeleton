@@ -109,7 +109,7 @@ export const fieldWorkersProductionSaga: Saga = function* workerEatingLoopSaga()
     );
     if (filedWorkers.length > 0)
       yield put(
-        storage.actionAddFoodCreator(
+        storage.actionFoodProducedCreator(
           filedWorkers.length * gameRules.fieldProductionPerWorkerRatio
         )
       );
@@ -127,7 +127,7 @@ export const sawWorkersProductionSaga: Saga = function* workerEatingLoopSaga(): 
     );
     if (sawWorkers.length > 0)
       yield put(
-        storage.actionAddWoodCreator(
+        storage.actionWoodProducedCreator(
           sawWorkers.length * gameRules.sawProductionPerWorkerRatio
         )
       );

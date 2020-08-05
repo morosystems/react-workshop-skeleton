@@ -141,13 +141,14 @@ vytvoření modulu, akcí, reduceru, selectoru
 4. zapojení getWoodAmount, getFoodAmount, getWorkerCapacity  v src/storage/Container.tsx 
 5. vytvoření akcí WOOD_PRODUCED, FOOD_PRODUCED, REMOVE_FOOD, BUILD_HOUSE v src/storage/constants.ts (Pozn. akci REMOVE_WOOD není třeba implementovat je zahrnuta do akce BUILD_HOUSE)
 6. vytvoření action creatorů v src/stroage/actions.ts
-    * actionWoodProducedCreator(amount:Number)
-    * actionFoodProducedCreator(amount:Number)
-    * actionRemoveFoodCreator(amount:Number)
-    * actionBuildHouseCreator(capacity:Number, cost:Number)
+    * actionWoodProducedCreator(amount:number)
+    * actionFoodProducedCreator(amount:number)
+    * actionRemoveFoodCreator(amount:number)
+    * actionBuildHouseCreator(houseWorkerCapacity:number, houseWoodCost:number)
 7. aplikování akcí v src/storage/reducer.ts
     * reducer workerCapacity bude reagovat na akci BUILD_HOUSE, kdy dojde k jeho navýšení. akci 
 8. exportujeme NAME (název modulu uložený v konstantách), ságu, reducer a Container /src/storage/index.ts
+    * nahradíme mocky v indexu za akce a selektory, které jsme právě vytořili
 9. zapojení modulu storage
     * do src/App je potřeba zapojit kontejner exportovaný storage modulem
     * do src/reducers je potřeba zapojit reducer exportovaného storage modulem

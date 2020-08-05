@@ -1,5 +1,6 @@
 import {Action} from 'redux';
 import {saga} from "./saga";
+import {hasStorageAnyFood} from "./selectors";
 
 /**
  * Úkol 3
@@ -12,11 +13,11 @@ import {saga} from "./saga";
 export const storage = {
     saga,
     //TODO replace mocks with real selectors and action creators
+    hasStorageAnyFood,
     getWoodAmount: (state:any) => Number.NaN,
+    getWorkerCapacity: (state:any) => Number.NaN,
     actionBuildHouseCreator: (a:any, b:any): Action<any> => ({type: ""}),
     actionRemoveFoodCreator: (a:any): Action<any> => ({type: ""}),
-    hasStorageAnyFood: (state:any) => Number.NaN,
-    getWorkerCapacity: (state:any) => Number.NaN,
-    actionAddFoodCreator: (a:any): Action<any> => ({type: ""}),
-    actionAddWoodCreator: (a:any): Action<any> => ({type: ""}),
+    actionFoodProducedCreator: (a:any): Action<any> => ({type: ""}),
+    actionWoodProducedCreator: (a:any): Action<any> => ({type: ""}),
 };
