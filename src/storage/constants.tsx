@@ -7,3 +7,8 @@ export const NAME: string = "storage";
  */
 
 export const SET_WORKER_CAPACITY: string = `${NAME}/SET_WORKER_CAPACITY`;
+
+export const WOOD_PRODUCED: string = `${NAME}/WOOD_PRODUCED`;
+export const FOOD_PRODUCED: string = `${NAME}/FOOD_PRODUCED`;
+export const REMOVE_FOOD: string = `${NAME}/REMOVE_FOOD`;
+export const BUILD_HOUSE: string = `${NAME}/BUILD_HOUSE`;

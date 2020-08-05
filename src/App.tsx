@@ -1,7 +1,8 @@
 import React from "react";
 import MainContainer from "./components/MainContainer";
 import menu from "./menu";
-import {workers} from "workers"
+import {workers} from "workers";
+import {storage} from "storage";
 
 /**
  * Ukol 2
@@ -13,7 +14,7 @@ import {workers} from "workers"
  */
 export default () => (
   <MainContainer>
-    <menu.Container storage={<span />} /> {/* TODO insert storage container instead of null */}
+    <menu.Container storage={<storage.Container />} />
        <workers.Container />
   </MainContainer>
 );

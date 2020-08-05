@@ -8,9 +8,13 @@ import {SET_WORKER_CAPACITY} from "./constants";
  *  - vytvoření interface IStorageState stav našeho modulu, bude obsahovat typování skladu a kapacity provníků
  */
 export interface IWarehouse {
+  wood: number,
+  food: number,
 }
 
 export interface IStorageState {
+  warehouse: IWarehouse,
+  workerCapacity: number,
 }
 
 export interface IWoodProducedAction extends Action<string> {

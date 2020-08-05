@@ -1,6 +1,9 @@
-import {Action} from 'redux';
 import {saga} from "./saga";
-import {hasStorageAnyFood} from "./selectors";
+import {NAME} from "./constants";
+import {reducer} from "./reducer";
+import {StorageContainer as Container} from "./Container";
+import {actionBuildHouseCreator, actionRemoveFoodCreator, actionFoodProducedCreator, actionWoodProducedCreator} from "./actions";
+import {getWoodAmount, getWorkerCapacity, hasStorageAnyFood} from "./selectors";
 
 /**
  * Úkol 3
@@ -11,13 +14,15 @@ import {hasStorageAnyFood} from "./selectors";
  *  - v src/saga je potřeba spustit ságu exportovanou workers modulem
  */
 export const storage = {
+    NAME,
+    Container,
     saga,
-    //TODO replace mocks with real selectors and action creators
+    reducer,
+    getWoodAmount,
+    actionBuildHouseCreator,
+    actionRemoveFoodCreator,
     hasStorageAnyFood,
-    getWoodAmount: (state:any) => Number.NaN,
-    getWorkerCapacity: (state:any) => Number.NaN,
-    actionBuildHouseCreator: (a:any, b:any): Action<any> => ({type: ""}),
-    actionRemoveFoodCreator: (a:any): Action<any> => ({type: ""}),
-    actionFoodProducedCreator: (a:any): Action<any> => ({type: ""}),
-    actionWoodProducedCreator: (a:any): Action<any> => ({type: ""}),
+    getWorkerCapacity,
+    actionFoodProducedCreator,
+    actionWoodProducedCreator
 };
