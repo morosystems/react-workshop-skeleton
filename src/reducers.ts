@@ -2,6 +2,7 @@ import {CombinedState, combineReducers, Reducer} from "redux";
 
 import { config } from "./config";
 import { i18n } from "./i18n";
+import {workers} from "./workers";
 
 /**
  * Ukol 2
@@ -13,7 +14,7 @@ import { i18n } from "./i18n";
  */
 export const reducer: Reducer<CombinedState<{}>> = combineReducers({
   [config.NAME]: config.reducer,
-  [i18n.NAME]: i18n.reducer
-  // TODO connect workers.reducer under workers.NAME
+  [i18n.NAME]: i18n.reducer,
+  [workers.NAME]: workers.reducer,
   // TODO connect storage.reducer under storage.NAME
 });

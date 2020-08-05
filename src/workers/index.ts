@@ -2,6 +2,9 @@ import {actionWorkersHasArrivedCreator} from "./actions";
 import {getWorkerCount} from "./selectors";
 import {Gender, WorkOccupation} from "./types";
 import {saga} from "./saga";
+import {reducer} from "./reducer";
+import {NAME} from "./constants";
+import {WorkersContainer as Container} from "./Container";
 
 /**
  * Ukol 2
@@ -15,4 +18,7 @@ export const workers = {
     Gender,
     WorkOccupation,
     saga,
+    reducer,
+    NAME,
+    Container,
 };
