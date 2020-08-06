@@ -56,10 +56,13 @@ cílem je doplnit existující React web aplikaci/hru za využití reduxu a ság
 * tlačítko na přiřazení nezařazeného pracovníka na pole
 
 # Kostra aplikace 
-[aplikace](https://i.imgur.com/9O3f9vf.png)
+![aplikace](https://i.imgur.com/9O3f9vf.png)
 
 # Zadání workshopových úkolů
 _pozn. mechanismy aplikace mimo zadání budu již připravené._
+
+## Počáteční vzhled aplikace
+![počáteční vzhled aplikace](./workshop_initial.png)
 
 ## Úkol 1 -  Přidání react komponenty
 ### Cíl úkolu
