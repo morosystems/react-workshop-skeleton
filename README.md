@@ -200,6 +200,10 @@ tvorba ságy, efekty, tvorba util funkce, testy na ságu a util funkci
         * pokud potřebujem předat výsledek do proměnné předáme jako parametr následujícího .next()
         * ujistíme se že sága doběhla pomocí .isDone()
         * pokud je sága v nekonečném cyklu, testujeme jeden cyklus a ukončíme ji pomocí .finish()
+ 
+### Vzhled aplikace po dokončení úkolu 4
+![vzhled aplikace po dokončení úkolu 4](./workshop_4.png)       
+ 
 ## Úkol 5 - optimalizace
 ### Cíl úkolu
 Optimalizace překreslování
