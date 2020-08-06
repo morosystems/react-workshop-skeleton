@@ -97,7 +97,7 @@ Je připravena kostra komponenty /src/components/DecreasingSecondCounter.tsx
     * Unit test
         * otestujeme že námi předaný callback je provolán po uplnynutí dané doby
              1. vytvoříme mock callbacku pomocí jest.fn() (přiřadíme do proměnné např. onCounterResetMock)
-             2. vytvoříme shallow render komponenty stejně jako v bodu 3, předáme mock
+             2. vytvoříme mount render komponenty podobně jako v bodu 3, předáme mock
              3. po uplynutí danné doby otestujem, že náš mock byl provolán
                 * na otestování použíjeme expect(...).toBe(1)
                 * počet provolání zjístíme přímo z mocku onCounterResetMock.mock.calls.length
