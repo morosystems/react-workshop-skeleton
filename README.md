@@ -103,6 +103,10 @@ Je připravena kostra komponenty /src/components/DecreasingSecondCounter.tsx
                 * na otestování použíjeme expect(...).toBe(1)
                 * počet provolání zjístíme přímo z mocku onCounterResetMock.mock.calls.length
              4. unmountujeme komponentycomponent.unmount();
+             
+### Vzhled aplikace po dokončení úkolu 1
+![vzhled aplikace po dokončení úkolu 1](./workshop_1.png)
+             
 ## Úkol 2 - zapojení modulu pracovníků
 ### Cíl úkolu
 zobrazení pracovníků v aplikaci
