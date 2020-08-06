@@ -1,10 +1,11 @@
-import { put, fork, select } from "redux-saga/effects";
+import { put, fork, select, delay } from "redux-saga/effects";
 
 import { Saga, SagaIterator } from "redux-saga";
 import { config } from "config";
 import {
-  actionSetWorkerCapacityCreator
+  actionSetWorkerCapacityCreator, actionWoodProducedCreator
 } from "./actions";
+import {workers} from "../workers";
 
 export const saga: Saga = function* saga(): SagaIterator {
   yield fork(initStorageSaga);
@@ -30,11 +31,37 @@ export const initStorageSaga: Saga = function* initStotageSaga(): SagaIterator  
  *        - počet surovin je roven počtu pracovníků na dané pozici pronásobený ratem z pravidel (sawProductionPerWorkerRatio/fieldProductionPerWorkerRatio)
  */
 export const fieldProductionSaga: Saga = function* workerEatingLoopSaga(): SagaIterator {
-  // while (true) {
-  // }
+  while (true) {
+    const gameRules: ReturnType<typeof config.getGameRules> = yield select(
+        config.getGameRules
+    );
+
+    yield delay(gameRules.fieldProductionSeconds);
+
+    const fieldWorkers: ReturnType<typeof workers.getFieldWorkers> = yield select(
+        workers.getFieldWorkers
+    );
+
+    if(fieldWorkers.length > 0) {
+      yield put(actionWoodProducedCreator(fieldWorkers.length * gameRules.fieldProductionPerWorkerRatio));
+    }
+  }
 };
 
 export const sawProductionSaga: Saga = function* workerEatingLoopSaga(): SagaIterator {
-  // while (true) {
-  // }
+  while (true) {
+    const gameRules: ReturnType<typeof config.getGameRules> = yield select(
+        config.getGameRules
+    );
+
+    yield delay(gameRules.sawProductionSeconds);
+
+    const sawWorkers: ReturnType<typeof workers.getSawWorkers> = yield select(
+        workers.getSawWorkers
+    );
+
+    if(sawWorkers.length > 0) {
+      yield put(actionWoodProducedCreator(sawWorkers.length * gameRules.sawProductionPerWorkerRatio));
+    }
+  }
 };

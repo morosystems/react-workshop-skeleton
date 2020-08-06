@@ -1,5 +1,5 @@
 import {actionWorkersHasArrivedCreator} from "./actions";
-import {getWorkerCount} from "./selectors";
+import {getFieldWorkers, getSawWorkers, getWorkerCount} from "./selectors";
 import {Gender, WorkOccupation} from "./types";
 import {saga} from "./saga";
 import {reducer} from "./reducer";
@@ -15,6 +15,8 @@ import {WorkersContainer as Container} from "./Container";
 export const workers = {
     actionWorkersHasArrivedCreator,
     getWorkerCount,
+    getFieldWorkers,
+    getSawWorkers,
     Gender,
     WorkOccupation,
     saga,
