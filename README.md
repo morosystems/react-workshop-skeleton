@@ -164,6 +164,10 @@ vytvoření modulu, akcí, reduceru, selectoru
     * do src/App je potřeba zapojit kontejner exportovaný storage modulem
     * do src/reducers je potřeba zapojit reducer exportovaného storage modulem
     * v src/saga je potřeba spustit ságu modulu pomocí efektu fork (stačí odkomentovat)
+
+### Vzhled aplikace po dokončení úkolu 3
+![vzhled aplikace po dokončení úkolu 3](./workshop_3.png)    
+    
 ## Úkol 4 - ságy
 ### Cíl úkolu
 generování surovin 
