@@ -3,7 +3,7 @@ import { put, fork, select, delay } from "redux-saga/effects";
 import { Saga, SagaIterator } from "redux-saga";
 import { config } from "config";
 import {
-  actionSetWorkerCapacityCreator, actionWoodProducedCreator
+  actionSetWorkerCapacityCreator, actionWoodProducedCreator, actionFoodProducedCreator,
 } from "./actions";
 import {workers} from "../workers";
 
@@ -36,14 +36,14 @@ export const fieldProductionSaga: Saga = function* workerEatingLoopSaga(): SagaI
         config.getGameRules
     );
 
-    yield delay(gameRules.fieldProductionSeconds);
+    yield delay(gameRules.fieldProductionSeconds*1000);
 
     const fieldWorkers: ReturnType<typeof workers.getFieldWorkers> = yield select(
         workers.getFieldWorkers
     );
 
     if(fieldWorkers.length > 0) {
-      yield put(actionWoodProducedCreator(fieldWorkers.length * gameRules.fieldProductionPerWorkerRatio));
+      yield put(actionFoodProducedCreator(fieldWorkers.length * gameRules.fieldProductionPerWorkerRatio));
     }
   }
 };
@@ -54,7 +54,7 @@ export const sawProductionSaga: Saga = function* workerEatingLoopSaga(): SagaIte
         config.getGameRules
     );
 
-    yield delay(gameRules.sawProductionSeconds);
+    yield delay(gameRules.sawProductionSeconds*1000);
 
     const sawWorkers: ReturnType<typeof workers.getSawWorkers> = yield select(
         workers.getSawWorkers
