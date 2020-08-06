@@ -129,6 +129,10 @@ definování rozhraní modulu, zapojení konterjneru modulu, napojení kontejner
     * data pro komponenty je potřeba získat z reduxu napojením komponenty
          * použijeme HOC connect z balíku react-redux
          * vytovoříme funkci mapStateToProps, která má první parametr stav aplikace (typu IState) výsledkem budou propsy naplněné daty ze selektorů
+
+### Vzhled aplikace po dokončení úkolu 2
+![vzhled aplikace po dokončení úkolu 2](./workshop_2.png)
+
 ## Úkol 3 - vytvoření modulu skladiště
 ### Cíl úkolu
 vytvoření modulu skladiště 
