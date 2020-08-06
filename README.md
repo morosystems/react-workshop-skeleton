@@ -61,6 +61,8 @@ cílem je doplnit existující React web aplikaci/hru za využití reduxu a ság
 # Zadání workshopových úkolů
 _pozn. mechanismy aplikace mimo zadání budu již připravené._
 
+![počáteční vzhled aplikace](./workshop_initial.png)
+
 ## Úkol 1 -  Přidání react komponenty
 ### Cíl úkolu
 Přidání komponenty, která nám bude ukazovat čas do příchodu nových pracovníků do horní lišty
